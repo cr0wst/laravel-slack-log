@@ -1,0 +1,35 @@
+{
+    "name": "smcrow/laravel-slack-log",
+    "description": "Utilizes Laravel's notifications to provide logging to slack at various levels.  Inspired by Log4j.",
+    "minimum-stability": "stable",
+    "keywords": ["laravel", "slack", "notifications", "logging"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Steve Crow",
+            "email": "steve@smcrow.net"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "laravel/framework": "~5.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "~1.0",
+        "phpunit/phpunit": "~6.0",
+        "squizlabs/PHP_CodeSniffer": "^3.1"
+    },
+    "autoload": {
+      "psr-4": {
+        "Smcrow\\SlackLog\\": "src/"
+      }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Smcrow\\SlackLog\\SlackLogServiceProvider"
+            ]
+        }
+    }
+}
