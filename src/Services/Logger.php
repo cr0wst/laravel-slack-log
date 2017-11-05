@@ -3,6 +3,7 @@
 namespace Smcrow\SlackLog\Services;
 
 use Smcrow\SlackLog\Constants\LogLevel;
+use Smcrow\SlackLog\Exceptions\WebhookNotDefined;
 use Smcrow\SlackLog\Messages\Debug;
 use Smcrow\SlackLog\Messages\Error;
 use Smcrow\SlackLog\Messages\Info;
@@ -84,9 +85,15 @@ class Logger
      *
      * @param Log $message
      * @param string $channelName
+     *
+     * @throws WebhookNotDefined
      */
     protected function log(Log $message, string $channelName = null): void
     {
+        if (!config('slack-log.webhook-url')) {
+            throw new WebhookNotDefined;
+        }
+
         (new Channel($channelName ?? config('slack-log.channel')))
             ->notify(new LogMessageRequested($message));
     }
