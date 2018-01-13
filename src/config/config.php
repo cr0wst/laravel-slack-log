@@ -21,7 +21,7 @@ return [
      * - ERROR  (1)
      * - NONE   (0)
      */
-    'log-level' => \Smcrow\SlackLog\Constants\LogLevel::DEBUG,
+    'log-level' => \Smcrow\SlackLog\Constants\LogLevel::$DEBUG,
 
     /**
      * The channel to send log messages to.

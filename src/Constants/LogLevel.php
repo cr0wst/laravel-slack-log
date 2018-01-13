@@ -10,10 +10,10 @@ class LogLevel
      * Example: A log level of 0 will disable logging entirely, while a log level of 2 will enable ERROR, WARN,
      * and TRACE.
      */
-    public const NONE = 0;
-    public const ERROR = 1;
-    public const WARN = 2;
-    public const INFO = 3;
-    public const TRACE = 4;
-    public const DEBUG = 5;
+    public static $NONE = 0;
+    public static $ERROR = 1;
+    public static $WARN = 2;
+    public static $INFO = 3;
+    public static $TRACE = 4;
+    public static $DEBUG = 5;
 }
