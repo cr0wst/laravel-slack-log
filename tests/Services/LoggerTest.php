@@ -1,6 +1,6 @@
 <?php
 
-namespace Smcrow\SlackLog\Services\Tests;
+namespace Smcrow\SlackLog\Testing\Services;
 
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Notification;
@@ -14,7 +14,7 @@ use Smcrow\SlackLog\Messages\Warn;
 use Smcrow\SlackLog\Notifiables\Channel;
 use Smcrow\SlackLog\Notifications\LogMessageRequested;
 use Smcrow\SlackLog\Services\Logger;
-use Tests\TestCase;
+use Smcrow\SlackLog\Testing\TestCase;
 
 class LoggerTest extends TestCase
 {
@@ -151,7 +151,7 @@ class LoggerTest extends TestCase
         $this->logger->debug('test', self::DUMMY_CHANNEL);
     }
 
-    private function notificationShouldReceive(string $logInstance): void
+    private function notificationShouldReceive(string $logInstance)
     {
         Notification::shouldReceive('send')
             ->once()
@@ -165,7 +165,7 @@ class LoggerTest extends TestCase
             });
     }
 
-    private function setLogLevel(int $logLevel): void
+    private function setLogLevel(int $logLevel)
     {
         Config::set('slack-log.log-level', $logLevel);
     }
