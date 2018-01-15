@@ -151,7 +151,7 @@ class LoggerTest extends TestCase
         $this->logger->debug('test', self::DUMMY_CHANNEL);
     }
 
-    private function notificationShouldReceive(string $logInstance): void
+    private function notificationShouldReceive(string $logInstance)
     {
         Notification::shouldReceive('send')
             ->once()
@@ -165,7 +165,7 @@ class LoggerTest extends TestCase
             });
     }
 
-    private function setLogLevel(int $logLevel): void
+    private function setLogLevel(int $logLevel)
     {
         Config::set('slack-log.log-level', $logLevel);
     }

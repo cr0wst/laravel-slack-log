@@ -15,35 +15,35 @@ use Smcrow\SlackLog\Notifications\LogMessageRequested;
 
 class Logger
 {
-    public function debug(string $message, $channelName = null): void
+    public function debug(string $message, $channelName = null)
     {
         if ($this->isDebugEnabled()) {
             $this->log(Debug::message($message), $channelName);
         }
     }
 
-    public function info(string $message, $channelName = null): void
+    public function info(string $message, $channelName = null)
     {
         if ($this->isInfoEnabled()) {
             $this->log(Info::message($message), $channelName);
         }
     }
 
-    public function trace(string $message, $channelName = null): void
+    public function trace(string $message, $channelName = null)
     {
         if ($this->isTraceEnabled()) {
             $this->log(Trace::message($message), $channelName);
         }
     }
 
-    public function warn(string $message, $channelName = null): void
+    public function warn(string $message, $channelName = null)
     {
         if ($this->isWarnEnabled()) {
             $this->log(Warn::message($message), $channelName);
         }
     }
 
-    public function error(string $message, $channelName = null): void
+    public function error(string $message, $channelName = null)
     {
         if ($this->isErrorEnabled()) {
             $this->log(Error::message($message), $channelName);
@@ -88,7 +88,7 @@ class Logger
      *
      * @throws WebhookNotDefined
      */
-    protected function log(Log $message, string $channelName = null): void
+    protected function log(Log $message, string $channelName = null)
     {
         if (!config('slack-log.webhook-url')) {
             throw new WebhookNotDefined;
