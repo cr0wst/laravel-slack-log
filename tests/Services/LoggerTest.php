@@ -23,11 +23,6 @@ class LoggerTest extends TestCase
      */
     private $logger;
 
-    /**
-     * @var Logger $mockedLogger
-     */
-    private $mockedLogger;
-
     const DUMMY_URL = 'http://example.org';
     const DUMMY_CHANNEL = '#example';
 
@@ -35,7 +30,6 @@ class LoggerTest extends TestCase
     {
         parent::setUp();
         $this->logger = app(Logger::class);
-        $this->mockedLogger = $this->createPartialMock(Logger::class, ['log']);
     }
 
     public function testAllLogLevelsDisabledWhenLogLevelIsNone()
