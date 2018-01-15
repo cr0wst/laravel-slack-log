@@ -7,8 +7,7 @@ class LogLevel
     /**
      * The various log levels for the application.  Setting a level will allow all lower levels to become enabled.
      *
-     * Example: A log level of 0 will disable logging entirely, while a log level of 2 will enable ERROR, WARN,
-     * and TRACE.
+     * Example: A log level of 0 will disable logging entirely, while a log level of 2 will enable ERROR and WARN.
      */
     const NONE = 0;
     const ERROR = 1;
